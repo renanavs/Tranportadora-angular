@@ -1,3 +1,16 @@
-mat-grid-tile {
-    background: lightblue;
+.row {
+    padding: 20px;
+    width: 100%;
+}
+
+.menu {
+    display: inline-flex;
+}
+
+.menu-header {
+    width: 66%;
+}
+
+.menu-action {
+    align-items: flex-end;
 }

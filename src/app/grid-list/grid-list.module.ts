@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatGridListModule } from '@angular/material';
-import { MenuModule } from './menu/menu.module';
+import { MatGridListModule, MatToolbarModule, MatButtonModule } from '@angular/material';
 
 import { GridListComponent } from './grid-list.component';
 
@@ -12,7 +11,8 @@ import { GridListComponent } from './grid-list.component';
   imports: [
     CommonModule,
     MatGridListModule,
-    MenuModule
+    MatToolbarModule,
+    MatButtonModule
   ],
 
   exports: [
