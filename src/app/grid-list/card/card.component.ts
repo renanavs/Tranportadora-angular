@@ -14,7 +14,6 @@ export class CardComponent implements OnInit {
   constructor(private service: TransportadoraService) { }
 
   ngOnInit() {
-    this.transportadora = this.service.list();
   }
 
 }
