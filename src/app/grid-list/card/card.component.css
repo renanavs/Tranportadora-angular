@@ -1,0 +1,13 @@
+.container {
+    width: 100%;
+    display: inline-flex;
+}
+
+.col {
+    margin: 20px;
+    width:30%;
+}
+
+mat-card {
+    background-color: lightblue;
+}

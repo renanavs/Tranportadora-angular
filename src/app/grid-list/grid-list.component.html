@@ -1,12 +1,20 @@
 <div class="row menu">
     <div class="menu-header">
-        <b>Transportadoras | ...</b>
+        <h3>Transportadoras | ...</h3>
     </div>
     <div class="menu-actions">
         <button mat-raised-button color="primary">Cadastre sua Transportadora</button>
-    </div>                    
+    </div>
 </div>
 <hr>
 <div class="row content">
-    <p>Content</p>
+    <mat-drawer-container class="example-container">
+        <mat-drawer mode="side" opened>
+            <h3>Drawer content Filtros e search</h3>
+            <p>testeste</p>
+        </mat-drawer>
+        <mat-drawer-content>
+            <card-component></card-component>
+        </mat-drawer-content>
+    </mat-drawer-container>
 </div>
