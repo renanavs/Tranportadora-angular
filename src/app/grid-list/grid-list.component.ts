@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 /**
  * @title Basic grid-list
@@ -8,4 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['grid-list.component.css'],
   templateUrl: 'grid-list.component.html',
 })
-export class GridListComponent {}
+export class GridListComponent implements OnInit {
+  
+  transportadoras: JSON[];
+  
+  ngOnInit(): void {
+  }
+
+}

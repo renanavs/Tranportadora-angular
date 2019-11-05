@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GridListModule } from './grid-list/grid-list.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { GridListModule } from './grid-list/grid-list.module';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    GridListModule
+    GridListModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
