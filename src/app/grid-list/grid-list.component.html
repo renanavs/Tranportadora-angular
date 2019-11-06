@@ -14,7 +14,10 @@
             <p>testeste</p>
         </mat-drawer>
         <mat-drawer-content>
-            <card-component *ngFor="let transportadora of transportadoras" [transportadora]="transportadora"></card-component>
+            <card-component
+                *ngFor="let transportadora of transportadoras"
+                [transportadora]="transportadora">
+            </card-component>
         </mat-drawer-content>
     </mat-drawer-container>
 </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Transportadora } from '../Model/Transportadora';
 import { TransportadoraService } from './../Service/transportadora.service';
@@ -15,11 +16,10 @@ export class GridListComponent implements OnInit {
 
   transportadoras: Transportadora[];
   
-  constructor(private service: TransportadoraService) { }
+  constructor(private service: TransportadoraService, private router: Router) { }
 
   ngOnInit(): void {
-    // this.service.list().subscribe(data => this.transportadoras = data);
-    this.service.list().subscribe(console.log);
+    this.service.list().subscribe(data => this.transportadoras = data);
   }
 
 }
