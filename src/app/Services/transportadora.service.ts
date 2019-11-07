@@ -8,23 +8,25 @@ import { Transportadora } from '../Models/Transportadora';
 })
 export class TransportadoraService {
 
-  private baseURL: String = "api/"; //Proxy
+  private baseURL: String = "api/transportadora/"; //Proxy
 
   constructor(private http: HttpClient) { }
 
   list() {
     return this.http
-            .get<Transportadora[]>(this.baseURL+"transportadora");
+            .get<Transportadora[]>(this.baseURL+"");
   }
 
   info(id) {
     return this.http
-            .get<Transportadora>(this.baseURL+"transportadora/"+id);
+            .get<Transportadora>(this.baseURL+"/"+id);
   }
 
   add(obj: Transportadora) {
+    const req = JSON.stringify(obj);
+    console.log(req);
     return this.http
-            .post(this.baseURL+"", null);
+            .post(this.baseURL+"", req);
   }
 
   update(obj: Transportadora, id: number) {

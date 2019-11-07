@@ -6,6 +6,7 @@ import { MatInputModule, MatFormFieldModule, MatOptionModule } from '@angular/ma
 import { MatSelectModule, MatButtonModule, MatCheckboxModule } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { RouterModule } from '@angular/router';
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
+    HttpClientModule,
     MatInputModule,
     MatFormFieldModule,
     MatOptionModule,
