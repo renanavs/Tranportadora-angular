@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { Transportadora } from '../Model/Transportadora';
+import { Transportadora } from '../Models/Transportadora';
 
 @Injectable({
   providedIn: 'root'

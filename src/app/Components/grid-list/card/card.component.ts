@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { TransportadoraService } from '../../Service/transportadora.service';
+import { TransportadoraService } from '../../../Services/transportadora.service';
 
 @Component({
   selector: 'card-component',

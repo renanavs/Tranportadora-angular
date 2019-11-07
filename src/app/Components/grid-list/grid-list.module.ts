@@ -6,6 +6,7 @@ import { DrawerModule } from './drawer/drawer.module';
 import { CardModule } from './card/card.module';
 
 import { GridListComponent } from './grid-list.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { GridListComponent } from './grid-list.component';
   ],
   imports: [
     CommonModule,
+    RouterModule,
     MatGridListModule,
     MatButtonModule,
     MatSidenavModule,

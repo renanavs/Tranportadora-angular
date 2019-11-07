@@ -1,0 +1,43 @@
+<div class="container">
+    <!-- <form [formGroup]="form" (ngSubmit)="addTransportadora()"> -->
+        <button mat-raised-button [routerLink]="['']" color="primary">Voltar</button>
+        <mat-form-field>
+            <input matInput placeholder="E-mail" [(ngModel)]="email">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Nome" [(ngModel)]="name">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Empresa" [(ngModel)]="company">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Telefone" [(ngModel)]="phone">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Modal" [(ngModel)]="modal">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Cep" [(ngModel)]="cep">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Estado" [(ngModel)]="uf_address">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Cidade" [(ngModel)]="city_address">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Bairro" [(ngModel)]="neighborhood_address">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Rua / Avenida" [(ngModel)]="street_address">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Número" [(ngModel)]="number_address">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-checkbox required>Eu aceito termos de serviços</mat-checkbox>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">Cadastrar-se agora!</button>
+    <!-- </form> -->
+</div>
+    

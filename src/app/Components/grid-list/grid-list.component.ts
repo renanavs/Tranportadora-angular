@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Transportadora } from '../Model/Transportadora';
-import { TransportadoraService } from './../Service/transportadora.service';
+import { Transportadora } from '../../Models/Transportadora';
+import { TransportadoraService } from '../../Services/transportadora.service';
 
 /**
  * @title Basic grid-list
