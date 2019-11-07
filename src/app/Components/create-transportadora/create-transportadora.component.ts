@@ -44,6 +44,8 @@ export class CreateTransportadoraComponent implements OnInit {
         modal: controls.modal.value,
         uf_address: controls.uf_address.value,
         city_address: controls.city_address.value,
+        neighborhood_address: controls.neighborhood_address.value,
+        street_address: controls.street_address.value,
         number_address: controls.number_address.value,
       });
       this.service.add(obj).subscribe();
