@@ -6,7 +6,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class CepService {
 
-  private url: string = "https://viacep.com.br/";
+  private url: string = "cep/ws/";
 
   private httpOptions = {
     headers: new HttpHeaders({'Content-Type': 'application/json'})

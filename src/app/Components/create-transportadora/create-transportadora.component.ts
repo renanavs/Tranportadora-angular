@@ -60,8 +60,12 @@ export class CreateTransportadoraComponent implements OnInit {
   cepChange() {
     if(this.form.controls.cep.valid){
       const cep = this.form.controls.cep.value;
-      console.log(cep);
-      console.log(this.cepService.getAddress(cep));
+      this.cepService.getAddress(cep).subscribe(data => {
+        this.form.controls.street_address.setValue(data['logradouro']);
+        this.form.controls.neighborhood_address.setValue(data['bairro']);
+        this.form.controls.city_address.setValue(data['localidade']);
+        this.form.controls.uf_address.setValue(data['uf']);
+      });
     }
   }
 
