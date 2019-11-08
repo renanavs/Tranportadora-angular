@@ -1,1 +1,11 @@
-<p>drawer works!</p>
+<div class="container">
+    <label>Buscar: </label>
+    <br>
+    <input type="text" placeholder="Nome" [(ngModel)]="searchName" (change)="search()">
+    <br>
+    <input type="text" placeholder="UF" [(ngModel)]="searchUf" (change)="search()">
+    <br>
+    <input type="text" placeholder="Município" [(ngModel)]="searchCity" (change)="search()">
+    <br>
+    <input type="text" placeholder="Modal" [(ngModel)]="searchModal" (change)="search()">
+</div>

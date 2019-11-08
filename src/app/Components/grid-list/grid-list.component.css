@@ -1,5 +1,5 @@
 .row {
-    padding: 20px;
+    /* padding: 20px; */
     width: 100%;
 }
 
@@ -9,8 +9,25 @@
 
 .menu-header {
     width: 66%;
+    padding: 20px;
 }
 
-.menu-action {
-    align-items: flex-end;
+.menu-actions {
+    margin-top: 40px;
+}
+
+.cards-container {
+    width: 100%;
+}
+
+.table {
+    display: table;
+}
+
+.column {
+    float: left;
+}
+
+.cards {
+    width : 80%;
 }

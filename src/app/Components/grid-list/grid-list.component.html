@@ -9,17 +9,14 @@
     </div>
 </div>
 <hr>
-<div class="row content">
-    <mat-drawer-container class="example-container">
-        <mat-drawer mode="side" opened>
-            <h3>Drawer content Filtros e search</h3>
-            <p>testeste</p>
-        </mat-drawer>
-        <mat-drawer-content>
-            <card-component
-                *ngFor="let transportadora of transportadoras"
-                [transportadora]="transportadora">
-            </card-component>
-        </mat-drawer-content>
-    </mat-drawer-container>
+<div class="row table">
+    <div class="column">
+        <drawer-component (filter)="receiveSearch($event)"></drawer-component>
+    </div>
+    <div class="cards column">
+        <card-component
+            *ngFor="let transportadora of transportadorasFiltered"
+            [transportadora]="transportadora">
+        </card-component>
+    </div>
 </div>

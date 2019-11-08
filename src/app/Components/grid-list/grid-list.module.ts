@@ -19,7 +19,8 @@ import { RouterModule } from '@angular/router';
     MatButtonModule,
     MatSidenavModule,
     DrawerModule,
-    CardModule
+    CardModule,
+    DrawerModule
   ],
   exports: [
     GridListComponent
