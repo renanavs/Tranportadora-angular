@@ -2,37 +2,106 @@
     <button mat-raised-button [routerLink]="['']" color="primary">Voltar</button>
     <mat-form-field>
         <input matInput placeholder="E-mail" formControlName="email">
+        <mat-hint>
+            Formato deve ser: exemplo@dominio
+        </mat-hint>
+        <mat-error *ngIf="form.controls.email.hasError('required')">
+            Campo Obrigatório
+        </mat-error>
+        <mat-error *ngIf="form.controls.email.hasError('email')">
+            Email inválido
+        </mat-error>
     </mat-form-field>
     <mat-form-field>
         <input matInput placeholder="Nome" formControlName="name">
+        <mat-error *ngIf="form.controls.name.hasError('required')">
+            Campo Obrigatório
+        </mat-error>
     </mat-form-field>
     <mat-form-field>
         <input matInput placeholder="Empresa" formControlName="company">
+        <mat-error *ngIf="form.controls.company.hasError('required')">
+            Campo Obrigatório
+        </mat-error>
+        <mat-error *ngIf="form.controls.company.hasError('minlength')">
+            O nome da empresa deve conter pelo menos 4 caracteres
+        </mat-error>
     </mat-form-field>
     <mat-form-field>
         <input matInput placeholder="Telefone" formControlName="phone">
+        <mat-error *ngIf="form.controls.phone.hasError('required')">
+            Campo Obrigatório
+        </mat-error>
+        <mat-error *ngIf="form.controls.phone.hasError('pattern')">
+            Campo deve conter apenas dígitos numéricos
+        </mat-error>
+        <mat-error *ngIf="!form.controls.phone.hasError('pattern') &&
+            ( form.controls.phone.hasError('minlength') || form.controls.phone.hasError('maxlength') )">
+            Telefone deve conter de 8 a 11 digitos
+        </mat-error>
     </mat-form-field>
     <mat-form-field>
         <input matInput placeholder="Modal" formControlName="modal">
+        <mat-error *ngIf="form.controls.modal.hasError('required')">
+            Campo Obrigatório
+        </mat-error>
     </mat-form-field>
     <mat-form-field>
-        <input matInput placeholder="Cep" formControlName="cep">
+        <input matInput placeholder="Cep" formControlName="cep" (change)="cepChange()">
+        <mat-error *ngIf="form.controls.cep.hasError('required')">
+            Campo Obrigatório
+        </mat-error>
+        <mat-error *ngIf="form.controls.cep.hasError('pattern')">
+            Campo deve conter apenas dígitos numéricos
+        </mat-error>
+        <mat-error *ngIf="!form.controls.cep.hasError('pattern') &&
+        ( form.controls.cep.hasError('minlength') || form.controls.cep.hasError('maxlength') )">
+            Cep deve conter 8 dígitos
+        </mat-error>
     </mat-form-field>
     <mat-form-field>
         <input matInput placeholder="Estado" formControlName="uf_address">
+        <mat-hint>
+            Digitar as 2 letras da UF (ex.: Pernambuco = PE)
+        </mat-hint>
+        <mat-error *ngIf="form.controls.uf_address.hasError('required')">
+            Campo Obrigatório
+        </mat-error>
+        <mat-error *ngIf="form.controls.uf_address.hasError('pattern')">
+            Caracteres devem ser maiúsculos
+        </mat-error>
+        <mat-error *ngIf="!form.controls.uf_address.hasError('required') && !form.controls.uf_address.hasError('pattern') &&
+        ( form.controls.uf_address.hasError('minlength') || form.controls.uf_address.hasError('minlength') )">
+            UF deve conter 2 caracteres
+        </mat-error>
     </mat-form-field>
     <mat-form-field>
         <input matInput placeholder="Cidade" formControlName="city_address">
+        <mat-error *ngIf="form.controls.city_address.hasError('required')">
+            Campo Obrigatório
+        </mat-error>
     </mat-form-field>
     <mat-form-field>
         <input matInput placeholder="Bairro" formControlName="neighborhood_address">
+        <mat-error *ngIf="form.controls.neighborhood_address.hasError('required')">
+            Campo Obrigatório
+        </mat-error>
     </mat-form-field>
     <mat-form-field>
         <input matInput placeholder="Rua / Avenida" formControlName="street_address">
+        <mat-error *ngIf="form.controls.street_address.hasError('required')">
+            Campo Obrigatório
+        </mat-error>
     </mat-form-field>
     <mat-form-field>
         <input matInput placeholder="Número" formControlName="number_address">
+        <mat-error *ngIf="form.controls.number_address.hasError('required')">
+            Campo Obrigatório
+        </mat-error>
+        <mat-error *ngIf="form.controls.number_address.hasError('pattern')">
+            Campo deve conter apenas dígitos numéricos
+        </mat-error>
     </mat-form-field>
-    <mat-checkbox color="primary" formControlName="check_box">Eu aceito termos de serviços</mat-checkbox>
+    <mat-checkbox color="primary" formControlName="check_box" required>Eu aceito termos de serviços</mat-checkbox>
     <button mat-raised-button color="primary" type="submit">Cadastrar-se agora!</button>
 </form>

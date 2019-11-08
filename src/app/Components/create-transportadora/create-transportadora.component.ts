@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { Transportadora } from 'src/app/Models/Transportadora';
 import { TransportadoraService } from 'src/app/Services/transportadora.service';
+import { CepService } from 'src/app/Services/cep.service';
 
 @Component({
   selector: 'app-create-transportadora',
@@ -14,23 +14,55 @@ export class CreateTransportadoraComponent implements OnInit {
 
   private form: FormGroup;
 
-  constructor(private service: TransportadoraService) { }
+  constructor(private service: TransportadoraService, private cepService: CepService) { }
 
   ngOnInit() {
     this.form = new FormGroup({
-      email: new FormControl(null),
-      name: new FormControl(null),
-      company: new FormControl(null),
-      phone: new FormControl(null),
-      modal: new FormControl(null),
-      cep: new FormControl(null),
-      uf_address: new FormControl(null),
-      city_address: new FormControl(null),
-      neighborhood_address: new FormControl(null),
-      street_address: new FormControl(null),
-      number_address: new FormControl(null),
-      check_box: new FormControl(null)
+      email: new FormControl(null, [
+        Validators.required,
+        Validators.email
+      ]),
+      name: new FormControl(null, [Validators.required]),
+      company: new FormControl(null, [
+        Validators.required,
+        Validators.minLength(4)
+      ]),
+      phone: new FormControl(null, [
+        Validators.required,
+        Validators.pattern("^[0-9]+"),
+        Validators.minLength(8),
+        Validators.maxLength(11)
+      ]),
+      modal: new FormControl(null, [Validators.required]),
+      cep: new FormControl(null, [
+        Validators.required,
+        Validators.pattern("^[0-9]*"),
+        Validators.minLength(8),
+        Validators.maxLength(8)
+      ]),
+      uf_address: new FormControl(null,[
+        Validators.required,
+        Validators.minLength(2),
+        Validators.maxLength(2),
+        Validators.pattern("^[A-Z]+")
+      ]),
+      city_address: new FormControl(null, [Validators.required]),
+      neighborhood_address: new FormControl(null, [Validators.required]),
+      street_address: new FormControl(null, [Validators.required]),
+      number_address: new FormControl(null, [
+        Validators.required,
+        Validators.pattern("^[0-9]+")
+      ]),
+      check_box: new FormControl(null, Validators.requiredTrue)
     });
+  }
+
+  cepChange() {
+    if(this.form.controls.cep.valid){
+      const cep = this.form.controls.cep.value;
+      console.log(cep);
+      console.log(this.cepService.getAddress(cep));
+    }
   }
 
   onSubmit() {
@@ -48,7 +80,12 @@ export class CreateTransportadoraComponent implements OnInit {
         street_address: controls.street_address.value,
         number_address: controls.number_address.value,
       });
-      this.service.add(obj).subscribe();
+      this.service.add(obj).subscribe(response => {
+        this.form.reset;
+        this.ngOnInit();
+      });
+    } else {
+      alert('Form inválido');
     }
   }
 
