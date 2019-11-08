@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MatCardModule, MatGridListModule, MatButtonModule } from '@angular/material';
 
 import { CardComponent } from './card.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -14,7 +15,8 @@ import { CardComponent } from './card.component';
     CommonModule,
     MatCardModule,
     MatGridListModule,
-    MatButtonModule
+    MatButtonModule,
+    RouterModule
   ],
   exports: [
     CardComponent

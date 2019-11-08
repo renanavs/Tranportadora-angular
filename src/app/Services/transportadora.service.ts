@@ -28,14 +28,13 @@ export class TransportadoraService {
 
   add(obj: Transportadora) {
     const req = JSON.stringify(obj);
-    console.log(req);
     return this.http
             .post(this.baseURL+"", req, this.httpOptions);
   }
 
-  update(obj: Transportadora, id: number) {
+  update(obj: Transportadora, id: string) {
     return this.http
-            .put(this.baseURL+"", null, this.httpOptions);
+            .put(this.baseURL+id, obj, this.httpOptions);
   }
 
   delete(id) {

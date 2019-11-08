@@ -9,10 +9,11 @@ export class Transportadora {
     neighborhood_address: string;
     city_address: string;
     uf_address: string;
+    cep: string;
 
     constructor(email: string, name: string, company: string,
         phone: string, modal: string, street_address: string, number_address: string,
-        neighborhood_address: string, city_address: string, uf_address: string) {
+        neighborhood_address: string, city_address: string, uf_address: string, cep: string) {
             this.email = email;
             this.name = name;
             this.company = company;
@@ -23,5 +24,6 @@ export class Transportadora {
             this.neighborhood_address = neighborhood_address;
             this.city_address = city_address;
             this.uf_address = uf_address;
+            this.cep = cep;
     }
 }

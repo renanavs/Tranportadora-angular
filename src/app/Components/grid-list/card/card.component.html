@@ -1,7 +1,11 @@
 <mat-card class="card">
     <div class="container">
         <div class="col">
-            <mat-card-subtitle>{{ transportadora.name }}</mat-card-subtitle>
+            <mat-card-subtitle>
+                <a [routerLink]="['/edit', transportadora.id]">
+                    {{ transportadora.name }}
+                </a>
+            </mat-card-subtitle>
         </div>
         <div class="col">
             <mat-card-subtitle>{{ transportadora.phone }}</mat-card-subtitle>

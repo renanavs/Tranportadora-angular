@@ -7,6 +7,7 @@ import { GridListModule } from './Components/grid-list/grid-list.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { CreateTransportadoraModule } from './Components/create-transportadora/create-transportadora.module';
+import { EditTransportadoraModule } from './Components/edit-transportadora/edit-transportadora.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { CreateTransportadoraModule } from './Components/create-transportadora/c
     GridListModule,
     HttpClientModule,
     AppRoutingModule,
-    CreateTransportadoraModule
+    CreateTransportadoraModule,
+    EditTransportadoraModule
   ],
   providers: [],
   bootstrap: [AppComponent]
